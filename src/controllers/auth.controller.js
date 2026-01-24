@@ -6,7 +6,6 @@ import jwt from 'jsonwebtoken'
 
 export const signupController = async (req,res) => {
     try {
-        console.log(req.body);
         const {username, email, password} = req.body;
         const emailCheck = await User.find({email:email});
         const nameCheck = await User.find({username:username});
