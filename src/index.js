@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 // v imp to set cookies origin and credentials
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }))
 app.use(cookieParser())
@@ -32,4 +32,5 @@ app.get('/',(req,res) => {
 
 app.listen(PORT, () => {
     console.log("Port listening on: ", PORT);
+
 });
